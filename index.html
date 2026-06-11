@@ -185,6 +185,44 @@
       border-color: rgba(100, 210, 255, 0.50);
     }
 
+    a.link--coming-soon {
+      opacity: 0.65;
+      cursor: default;
+    }
+
+    a.link--coming-soon:hover {
+      transform: none;
+      background: var(--surface);
+      border-color: var(--border);
+    }
+
+    a.link--coming-soon:hover .icon {
+      border-color: rgba(100, 210, 255, 0.55);
+      box-shadow:
+        0 0 0 1px rgba(100, 210, 255, 0.12),
+        0 0 12px rgba(100, 210, 255, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        inset 0 -6px 10px rgba(0, 0, 0, 0.55);
+    }
+
+    a.link--coming-soon .chevron {
+      display: none;
+    }
+
+    .badge {
+      flex: 0 0 auto;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.04);
+      white-space: nowrap;
+    }
+
     .icon {
       position: relative;
       flex: 0 0 auto;
@@ -430,6 +468,33 @@
           <span class="url">superintelligence-statement.org</span>
         </span>
         <span class="chevron" aria-hidden="true">›</span>
+      </a>
+
+      <a class="link link--coming-soon"
+         tabindex="-1"
+         aria-disabled="true">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <defs>
+              <linearGradient id="goldStroke" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#F4D480"/>
+                <stop offset="0.55" stop-color="#C9A04D"/>
+                <stop offset="1" stop-color="#8A6A1F"/>
+              </linearGradient>
+            </defs>
+            <g stroke="url(#goldStroke)">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+              <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+            </g>
+          </svg>
+        </span>
+        <span class="text">
+          <span class="title">The AI Systems Accelerator</span>
+          <span class="url">Coming soon</span>
+        </span>
+        <span class="badge">Coming Soon</span>
       </a>
     </nav>
 
