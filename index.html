@@ -202,30 +202,52 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      margin: 0 0 14px;
-      padding: 17px 20px;
-      background: linear-gradient(180deg, #7CDBFF 0%, #4FC6FA 100%);
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      border-radius: 18px;
-      color: #04141D;
-      font-size: 17px;
-      font-weight: 700;
-      letter-spacing: 0.01em;
+      margin: 4px 0 24px;
+      padding: 26px 24px;
+      background: linear-gradient(180deg, #8CE0FF 0%, #43C2FA 100%);
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      border-radius: 22px;
+      color: #03121B;
+      font-size: 27px;
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      line-height: 1;
       text-decoration: none;
       box-shadow:
-        0 0 0 1px rgba(100, 210, 255, 0.20),
-        0 8px 28px rgba(100, 210, 255, 0.34),
-        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+        0 0 0 1px rgba(100, 210, 255, 0.26),
+        0 14px 44px rgba(100, 210, 255, 0.46),
+        0 2px 10px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.55);
       transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      animation: applyGlow 3.2s ease-in-out infinite;
+    }
+
+    @keyframes applyGlow {
+      0%, 100% {
+        box-shadow:
+          0 0 0 1px rgba(100, 210, 255, 0.26),
+          0 14px 44px rgba(100, 210, 255, 0.46),
+          0 2px 10px rgba(0, 0, 0, 0.45),
+          inset 0 1px 0 rgba(255, 255, 255, 0.55);
+      }
+      50% {
+        box-shadow:
+          0 0 0 1px rgba(100, 210, 255, 0.38),
+          0 18px 58px rgba(100, 210, 255, 0.64),
+          0 2px 10px rgba(0, 0, 0, 0.45),
+          inset 0 1px 0 rgba(255, 255, 255, 0.55);
+      }
     }
 
     a.apply:hover {
-      filter: brightness(1.06);
-      transform: translateY(-1px);
+      filter: brightness(1.07);
+      transform: translateY(-2px);
+      animation-play-state: paused;
       box-shadow:
-        0 0 0 1px rgba(100, 210, 255, 0.28),
-        0 12px 34px rgba(100, 210, 255, 0.46),
-        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+        0 0 0 1px rgba(100, 210, 255, 0.42),
+        0 20px 60px rgba(100, 210, 255, 0.68),
+        0 2px 10px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.55);
     }
 
     a.apply:active { transform: translateY(0) scale(0.99); }
@@ -236,7 +258,7 @@
     }
 
     a.apply .arrow {
-      font-size: 19px;
+      font-size: 27px;
       line-height: 1;
       transform: translateY(-1px);
     }
@@ -454,10 +476,12 @@
       .avatar { width: 92px; height: 92px; border-radius: 22px; }
       .avatar::after { border-radius: 21px; }
       h1 { font-size: 20px; }
+      a.apply { font-size: 23px; padding: 22px 18px; border-radius: 20px; margin: 2px 0 20px; }
+      a.apply .arrow { font-size: 23px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      * { transition: none !important; }
+      * { transition: none !important; animation: none !important; }
       #shader-bg { display: none; }
     }
   </style>
