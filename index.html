@@ -196,6 +196,51 @@
       border-color: var(--border);
     }
 
+    /* Apply Now — the one solid CTA, deliberately not a glass card */
+    a.apply {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 0 0 14px;
+      padding: 17px 20px;
+      background: linear-gradient(180deg, #7CDBFF 0%, #4FC6FA 100%);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 18px;
+      color: #04141D;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      box-shadow:
+        0 0 0 1px rgba(100, 210, 255, 0.20),
+        0 8px 28px rgba(100, 210, 255, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+      transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
+
+    a.apply:hover {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+      box-shadow:
+        0 0 0 1px rgba(100, 210, 255, 0.28),
+        0 12px 34px rgba(100, 210, 255, 0.46),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    a.apply:active { transform: translateY(0) scale(0.99); }
+
+    a.apply:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 3px;
+    }
+
+    a.apply .arrow {
+      font-size: 19px;
+      line-height: 1;
+      transform: translateY(-1px);
+    }
+
     a.link--coming-soon:hover .icon {
       border-color: rgba(100, 210, 255, 0.55);
       box-shadow:
@@ -429,6 +474,13 @@
       <h1>Kyle Painter</h1>
       <p class="tagline">CEO, Disruptors Media</p>
     </header>
+
+    <a class="apply"
+       href="https://consult.disruptorsmedia.com/ai-marketing?utm_source=linkinbio&utm_medium=social&utm_campaign=link_in_bio&utm_content=apply_now"
+       rel="noopener">
+      Apply Now
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
 
     <nav class="links" aria-label="Links">
       <a class="link link--primary"
